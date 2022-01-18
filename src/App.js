@@ -4,7 +4,7 @@ import PokemonCard from './components/PokemonCard'
 const App = () => {
 
    const[allPokemons, setAllPokemons] = useState([])
-   const [loadMore, setLoadMore] = useState('https://pokeapi.co/api/v2/pokemon?limit=30')
+   const [loadMore, setLoadMore] = useState('https://pokeapi.co/api/v2/pokemon?limit=20')
 
   const getAllPokemons = async () => {
     const res = await fetch(loadMore)
@@ -25,7 +25,7 @@ const App = () => {
 
  useEffect(() => {
   getAllPokemons()
- })
+ }, [])
 
   return (
     <div className="app-container">
