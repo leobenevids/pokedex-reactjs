@@ -1,9 +1,12 @@
 import { styled, css } from "styled-components";
 import openPokeball from "../../assets/openPokeball.png";
-import closedPokeball from "../../assets/closedPokeball.png"
+import closedPokeball from "../../assets/closedPokeball.png";
 
 export const CardContainer = styled.div`
-  background-color: ${({ type }) => css`var(--${type})`};
+  background: ${({ type1, type2 }) =>
+    type2
+      ? css`linear-gradient(to bottom right, var(--${type1}) 50%, var(--${type2}) 50%)`
+      : css`var(--${type1})`};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,7 +21,7 @@ export const CardContainer = styled.div`
 
   &:hover {
     animation: bounce 0.5s linear;
-    cursor: url(${closedPokeball}), pointer;
+    cursor: url(${closedPokeball}), auto;
   }
 
   .number {
@@ -34,10 +37,9 @@ export const CardContainer = styled.div`
     &:hover {
       transform: scale(1.3);
       transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-      cursor: url(${openPokeball}), pointer;
+      cursor: url(${openPokeball}), auto;
     }
   }
-
 `;
 
 export const Details = styled.div`
@@ -47,21 +49,12 @@ export const Details = styled.div`
 
   h2 {
     margin-bottom: 0.2rem;
-  -webkit-text-fill-color: #ffde00;
-  -webkit-text-stroke: 0.8px #003a70;
+    -webkit-text-fill-color: #ffde00;
+    -webkit-text-stroke: 1px #003a70;
   }
 
   small {
-    text-transform: capitalize;
-  }
-
-  button {
-    color: rgb(22, 22, 22);
-    padding: 0.5rem;
-    margin-top: 1rem;
-    border: none;
-    border-radius: 0.2rem;
-    cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.185);
+    font-family: "PokemonGb-RAeo";
+    font-size: 0.5rem;
   }
 `;

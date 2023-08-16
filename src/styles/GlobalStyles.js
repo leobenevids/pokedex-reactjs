@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
-import animeFont from "../fonts/PocketMonk-15ze.ttf"
-import gameFont from "../fonts/PokemonGb-RAeo.ttf"
+import animeFont from "../fonts/PocketMonk-15ze.ttf";
+import gameFont from "../fonts/PokemonGb-RAeo.ttf";
 
 const GlobalStyles = createGlobalStyle`
     body {
@@ -55,6 +55,26 @@ const GlobalStyles = createGlobalStyle`
   100% {
     transform: translateY(0);
   }
+}
+
+button {
+  background: #f5f5f5 linear-gradient(#f5f5f5,#f1f1f1) repeat-x;
+  border-radius: 25px;
+  border: 1px solid #c6c6c6;
+  color: #444;
+  padding: 0.5rem 1rem;
+  max-width: 40%;
+  margin-top: 1rem;
+  font-family: 'PokemonGb-RAeo';
+  box-shadow: 1px 1.5px #999;
+  text-transform: lowercase;
+  font-size: .7rem;
+
+  &:hover{
+  cursor: pointer;
+  animation: bounce 0.06s linear;
+}
+
 }
 `;
 
